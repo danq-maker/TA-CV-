@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  color: #f8fafc;
+}
+
+/* TARJETA PRINCIPAL (index.html) */
+.card-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 35px 30px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* CONTENEDOR DEL CV (cv.html) - AMPLIADO PARA DOS COLUMNAS */
+.cv-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 35px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   USO DE FLEXBOX (Obligatorio en la actividad)
+   ========================================== */
+
+/* Layout de dos columnas para el CV */
+.cv-flex-layout {
+  display: flex;             /* 1. Activa Flexbox */
+  flex-direction: row;       /* 2. Dirección horizontal (columnas) */
+  justify-content: space-between; /* 3. Espaciado horizontal */
+  align-items: flex-start;   /* 4. Alineación vertical superior */
+  gap: 30px;                 /* Separación entre columnas */
+}
+
+/* Sidebar (Columna Izquierda) */
+.cv-sidebar {
+  flex: 1;
+  max-width: 320px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Main (Columna Derecha) */
+.cv-main {
+  flex: 2;
+}
+
+/* ENCABEZADOS Y AVATAR */
+.profile-header, .cv-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar, .cv-avatar {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.35);
+  object-fit: cover;
+}
+
+.cv-avatar {
+  border: 3px solid #38bdf8;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.tagline, .cv-subtitle {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin-top: 6px;
+}
+
+.cv-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: #38bdf8;
+}
+
+.cv-contact-list span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  word-break: break-all;
+}
+
+/* GRID DE DATOS RÁPIDOS (index.html) */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.info-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 14px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info-item i {
+  font-size: 1.2rem;
+  color: #38bdf8;
+}
+
+.info-item span {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  display: block;
+}
+
+.info-item strong {
+  font-size: 0.88rem;
+  color: #f1f5f9;
+}
+
+/* SECCIONES Y TEXTOS */
+.about-section, .hobbies-section, .cv-section {
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  color: #38bdf8;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-section p, .cv-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px 15px;
+  border-radius: 12px;
+}
+
+.cv-item {
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px 15px;
+  border-radius: 12px;
+  border-left: 3px solid #6366f1;
+}
+
+.cv-item h3 {
+  color: #f1f5f9;
+  font-size: 0.9rem;
+}
+
+.cv-date {
+  font-size: 0.75rem;
+  color: #a5b4fc;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.cv-item ul {
+  margin-left: 18px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+}
+
+.cv-item li {
+  margin-bottom: 4px;
+}
+
+/* ETIQUETAS (TAGS) - Flexbox aplicado */
+.tags {
+  display: flex;             /* Flexbox para etiquetas */
+  flex-wrap: wrap;           /* Salto de línea automático */
+  gap: 6px;
+}
+
+.tag {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #c7d2fe;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+}
+
+/* BOTONES Y ENLACES - Flexbox aplicado */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn, .back-link {
+  display: flex;             /* Flexbox para alinear iconos y texto */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn-cv {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.btn-cv:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.btn-github {
+  background: #24292e;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-github:hover {
+  background: #333940;
+  transform: translateY(-2px);
+}
+
+.back-link {
+  background: rgba(255, 255, 255, 0.08);
+  color: #38bdf8;
+  margin-bottom: 20px;
+  width: fit-content;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* RESPONSIVE PARA MÓVILES */
+@media (max-width: 768px) {
+  .cv-flex-layout {
+    flex-direction: column; /* Pasa de dos columnas a una sola columna en pantallas pequeñas */
+  }
+  .cv-sidebar {
+    max-width: 100%;
+  }
+}
